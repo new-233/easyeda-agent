@@ -1,0 +1,13 @@
+# 系统 / 编辑器垃圾文件
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+*.tmp
+.vscode/
+.idea/
+
+# 注意：node_modules 故意不忽略。
+# 本插件把 schemastery / cosmokit / @standard-schema 依赖 vendor 在包内（纯 JS、约 69KB），
+# 提交后 clone/install 即可直接运行，不需要 registry 安装步骤。
+# 如果你的全局 gitignore 忽略了 node_modules，先用 `git add -f node_modules` 强制加入。

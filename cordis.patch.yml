@@ -1,0 +1,15 @@
+# easyeda-agent DSH 组合包：为当前 profile 添加一个 Host 插件条目。
+#
+# name 使用**相对路径**：Loader 会把插入条目的相对路径锚定在 patch 文件所在目录，
+# 所以仓库 clone / 安装到哪个位置都能用，不绑死任何本机绝对路径（可直接分享给他人）。
+#
+# 关于热更新：Node 按 URL 缓存模块，改 lib/*.js 后需要重启 DSH 才会加载新代码
+# （替换已安装包 = restart-required，这是 DSH 的机制，不是插件问题）。
+# knowledge/*.md 不受影响——它在每次工具调用时实时读取，改完立即生效。
+
+- insert:
+    - id: easyeda-agent
+      name: ./lib/main.js
+
+# 绝对路径回退方案：若你的 DSH 版本不支持相对锚定，把上面 name 换成本机绝对 file:// URL，例如：
+#      name: 'file:///C:/path/to/easyeda-agent/lib/main.js'

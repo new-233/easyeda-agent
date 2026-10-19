@@ -1,0 +1,29 @@
+{
+  "name": "dsh-plugin-easyeda-agent",
+  "version": "0.4.0",
+  "description": "嘉立创 EDA 专业版自动化插件：typed 原理图/PCB 动作 + playbook 批量回放 + 阶段验收门 + 工艺参数/绘制原则知识层，驱动全流程自动绘制",
+  "type": "module",
+  "main": "lib/main.js",
+  "exports": {
+    ".": "./lib/main.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/",
+    "knowledge/",
+    "skill/",
+    "scripts/",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.4"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
